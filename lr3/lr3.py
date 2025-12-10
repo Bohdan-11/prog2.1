@@ -1,13 +1,13 @@
 
 
-def gen_bin_tree(height = 3, root = 1):
+def gen_bin_tree(height = 4, root = 8):
     
     
     if height == 1:
         return  {'root': root, 'left': None, 'right': None}
 
-    left_child = root + 1
-    right_child = root - 1
+    left_child = root + (root / 2)
+    right_child = root * root
 
     return {
         'root': root,
@@ -15,7 +15,7 @@ def gen_bin_tree(height = 3, root = 1):
         'right': gen_bin_tree(height - 1, right_child)
     }
 
-tree = gen_bin_tree(3)
+tree = gen_bin_tree()
 print(tree)
 
         
